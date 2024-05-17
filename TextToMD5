@@ -1,0 +1,11 @@
+import hashlib
+
+def md5_encode(text):
+    # Metni MD5 ile şifrele
+    hashed_text = hashlib.md5(text.encode()).hexdigest()
+    return hashed_text
+
+if __name__ == "__main__":
+    plaintext = input("Şifrelenecek metni girin / Enter the text to be encrypted: ")
+    encrypted_text = md5_encode(plaintext)
+    print("Şifrelenmiş Metin (MD5):", encrypted_text)
