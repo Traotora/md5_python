@@ -1,0 +1,22 @@
+import hashlib
+
+def md5_encode(text):
+    # Metni MD5 ile şifrele
+    hashed_text = hashlib.md5(text.encode()).hexdigest()
+    return hashed_text
+
+if __name__ == "__main__":
+    # Metni al
+    plaintext = input("Metni girin: ")
+
+    # Metnin MD5 hash'ini hesapla
+    target_hash = md5_encode(plaintext)
+
+    # Eşleşen hash'i bulmak için kullanıcıdan hash'i al
+    given_hash = input("Metnin MD5 hash'ini girin: ")
+
+    # Verilen hash ile hesaplanan hash'i karşılaştır
+    if given_hash == target_hash:
+        print("Verilen metin, girilen MD5 hash'e karşılık geliyor.")
+    else:
+        print("Verilen metin, girilen MD5 hash'e karşılık gelmiyor.")
